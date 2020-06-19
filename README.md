@@ -21,3 +21,9 @@ The source code were copied from https://medium.com/@nitinpatel_20236/how-to-bui
 hosted at https://hub.docker.com/repository/docker/gauravkumar552/simple_calc
 After pulling image please run following command (I had to use sudo)
 docker run -p 3001:3000 -it gauravkumar552/simple_calc:v14
+
+### Kubernetes
+- gcloud auth login
+- gcloud container clusters get-credentials CLUSTER_NAME --zone ZONE  --project PROJECT_NAME
+- kubectl create deployment simple-calc --image=gauravkumar552/simple_calc:v14
+- kubectl expose deployment simple-calc --type LoadBalancer  --port 3000 --target-port 3000

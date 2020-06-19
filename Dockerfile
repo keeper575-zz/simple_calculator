@@ -8,7 +8,7 @@ FROM node:10
 RUN curl -L https://npmjs.org/install.sh | sh
 RUN npm install --force -g npx
 RUN git clone https://github.com/keeper575/simple_calculator.git
-RUN cd /simple_calculator
+WORKDIR /simple_calculator
 
 COPY ./docker-entrypoint.sh /
 
